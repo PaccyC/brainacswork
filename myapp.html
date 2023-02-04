@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>App</title>
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+}
+body{
+    width: 1000px;
+background-color: white;
+font-family: sans-serif;
+
+}
+h1{
+    text-align: center;
+    margin-top: 100px;
+    font-family: sans-serif;
+}
+.main-container{
+    width: 400px;
+    height: 600px;
+    background-color: white;
+    margin: 100px auto;
+    border-radius: 20px;
+    border: 3px solid darkblue;
+    font-size: 25px;
+    text-align: center;
+    
+    
+}
+.main-container .label{
+    margin-top: 20px;
+}
+.main-container input{
+    margin-top: 20px;
+    height: 30px;
+    width: 250px;
+}
+
+.main-container .submit{
+    color: white;
+    background-color: dodgerblue;
+    border: none;
+    height: 25px;
+    width: 150px;
+    margin-top: 70px;
+}
+img{
+    height: 200px;
+    width: 200px;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    width: 100%;
+}
+.profile-pic-div{
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    top: 50%;
+    left: 85%;
+    transform: translate(-50%,-50%);
+    overflow: hidden;
+    border-radius: 50%;
+    border: 1px solid grey;
+
+}
+#photo{
+    height: 100%;
+    width: 100%;
+}
+#file{
+    display: none;
+}
+
+#uploadBtn{
+ height: 40px;
+ width: 100%;
+ position: absolute;
+ bottom: 0;
+ transform: translateX(-50%);  
+ text-align: center; 
+ background: rgba(0, 0, 0, 0.7);
+ line-height: 30px;
+ font-size: 15px;
+ color: wheat;
+ font-family: sans-serif;
+ cursor: pointer;
+}
+    </style>
+</head>
+<body>
+    <h1>SIGN UP HERE</h1>
+
+    <div class="main-container"> 
+        <form action="add-data" method="post" enctype="multipart/form-data">
+            
+            <div class="input__container">
+                <label for="pic" id="piclabel">Upload profile pic</label>
+                <input type="file" name="image" id="pic" required>
+              </div>
+              
+                
+        <div class="label">
+            <label for="uname">USERNAME</label>
+        </div>
+        <input type="text" name="name">
+
+        <div class="label"><label for="lname">Email</label></div>
+        <input type="email" name="email" >
+
+        <div class="label">
+            <label for="password">Password</label>
+        </div>
+        <input type="password" name="password">
+        
+
+
+        <input type="submit" placeholder="submit" class="submit">
+    </form>
+</div>
+
+<script>
+    let inputFile = document.querySelector('#pic');
+    inputFile.addEventListener('change', () => {
+      let filename = inputFile.value.split('\\').pop()
+      document.querySelector("#piclabel").innerHTML = filename + `<i class="fa fa-check"></i>`;
+      document.querySelector('#piclabel').style.backgroundColor = 'white'
+      document.querySelector('#piclabel').style.color = 'white'
+    })
+
+</script>
+</body>
+
+
+
+</html>
